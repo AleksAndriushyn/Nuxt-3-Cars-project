@@ -5,7 +5,7 @@ import CustomInput from "~/components/common/CustomInput.vue";
 import { emailValid } from "~/utils/validations";
 
 const supabase = useSupabaseClient()
-const redirectUrl = 'http://localhost:3000/confirm';
+const redirectUrl = process.env.BASE_URL + 'confirm' || 'http://localhost:3000/confirm';
 
 const { updateError, commonError } = inject('loginData');
 
