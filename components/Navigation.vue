@@ -19,13 +19,18 @@
 <script setup>
 const user = useSupabaseUser()
 
-const userInfo = computed(() => user.value ? {
-    id: user.value.id,
-    name: user.value.name ?? user.value.user_metadata.name,
-    email: user.value.email,
-    image: user.value.user_metadata.avatar_url,
-  } : null
-)
+const userInfo = useState('userInfo', () => null);
+
+watch(user, (newUser) => {
+  if (newUser) {
+    userInfo.value = {
+      id: newUser.id,
+      name: newUser.name ?? newUser.user_metadata.name,
+      email: newUser.email,
+      image: newUser.user_metadata.avatar_url,
+    };
+  }
+});
 </script>
 
 <style scoped>

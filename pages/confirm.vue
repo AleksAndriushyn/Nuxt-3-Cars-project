@@ -1,11 +1,8 @@
 <script setup lang="ts">
-definePageMeta({
-  middleware: 'auth',
-});
-
 const user = useSupabaseUser()
 
 watch(user, () => {
+  console.log(user.value)
   if (user.value) {
     navigateTo('/profile')
   }
