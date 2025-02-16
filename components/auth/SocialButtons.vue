@@ -1,6 +1,8 @@
 <script setup lang="ts">
+import {baseUrl} from "~/utils/vars";
+
 const supabase = useSupabaseClient()
-const redirectUrl = process.env.BASE_URL + 'confirm' || 'http://localhost:3000/confirm';
+const redirectUrl = baseUrl + '/confirm';
 
 const { updateError, commonError } = inject('loginData');
 

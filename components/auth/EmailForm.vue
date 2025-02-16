@@ -3,9 +3,10 @@ import { useVuelidate } from '@vuelidate/core'
 import { required } from '@vuelidate/validators'
 import CustomInput from "~/components/common/CustomInput.vue";
 import { emailValid } from "~/utils/validations";
+import { baseUrl } from "~/utils/vars.js";
 
 const supabase = useSupabaseClient()
-const redirectUrl = process.env.BASE_URL + 'confirm' || 'http://localhost:3000/confirm';
+const redirectUrl = baseUrl + '/confirm';
 
 const { updateError, commonError } = inject('loginData');
 
