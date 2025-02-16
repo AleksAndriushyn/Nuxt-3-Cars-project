@@ -26,15 +26,6 @@ const signInWithSocial = async (provider) => {
     >
       oogle
     </custom-button>
-    <custom-button
-        class="socialBtn"
-        type="button"
-        @click="signInWithSocial('facebook')"
-        icon-name="Facebook"
-        icon-color="#0866ff"
-    >
-      acebook
-    </custom-button>
   </div>
 </template>
 
